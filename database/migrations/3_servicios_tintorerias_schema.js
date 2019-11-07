@@ -8,7 +8,7 @@ class ServiciosTintoreriasSchema extends Schema {
     this.create('servicios_tintorerias', (table) => {
       table.increments()
       table.integer('lavanderia_id').unsigned().references('id').inTable('lavanderias')
-      table.string('servicio').notNullable()
+      table.text('servicio','longtext').notNullable()
       table.timestamps()
     })
   }
