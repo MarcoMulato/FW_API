@@ -14,7 +14,7 @@ class ServiciosPlanchadoController {
   async store ({request, response}) {
     const servicioInfo = request.only(['lavanderia_id', 'servicio'])
 
-    const servicioC = new Usuario()
+    const servicioC = new Servicio()
     servicioC.lavanderia_id = servicioInfo.lavanderia_id
     servicioC.servicio = servicioInfo.servicio
 
