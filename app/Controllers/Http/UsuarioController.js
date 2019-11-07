@@ -41,7 +41,7 @@ class UsuarioController {
     const user_id = await Usuario.query().select('id').where('correo_electronico','=',correo_electronico).fetch()
     Object.assign(usuario,user_id.toJSON())
     console.log("AL SALIR", user_id.toJSON())
-    return response.json(usuario.token);
+    return response.json(usuario);
   }
   async password ({ auth, request,response ,params}) {
     const {correo_electronico, contraseña, contraseña_nueva} = request.all();
