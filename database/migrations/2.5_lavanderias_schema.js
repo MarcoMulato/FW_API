@@ -12,7 +12,7 @@ class LavanderiasSchema extends Schema {
       table.string('telefono').notNullable()
       table.string('correo_electronico').notNullable()
       table.string('contraseña').notNullable()
-      table.string('fotografias').notNullable()
+      table.text('fotografias','longtext').notNullable()
       table.string('horario_semana')
       table.string('horario_sabado')
       table.string('coordenadas')
