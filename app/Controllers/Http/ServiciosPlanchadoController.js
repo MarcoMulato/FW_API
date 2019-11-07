@@ -7,7 +7,7 @@ class ServiciosPlanchadoController {
     return response.json(servicios)
   }
   async show ({params, response}) {
-    const servicio = await Servicio.find(params.id)
+    const servicio = await Servicio.query().select('*').where('lavanderia_id','=',params.id).fetch()
 
     return response.json(servicio)
   }
