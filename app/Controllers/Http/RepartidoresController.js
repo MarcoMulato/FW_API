@@ -42,7 +42,7 @@ class RepartidoresController {
         const user_id = await Repartidor.query().select('id').where('correo_electronico','=',correo_electronico).fetch()
         Object.assign(repartidor,user_id.toJSON())
         console.log("AL SALIR", user_id.toJSON())
-        return response.json(repartidor.token);
+        return response.json(repartidor);
       }
       async password ({ auth, request,response ,params}) {
         const {correo_electronico, contraseña, contraseña_nueva} = request.all();

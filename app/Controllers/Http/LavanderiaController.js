@@ -44,7 +44,7 @@ class LavanderiaController {
         const user_id = await Lavanderia.query().select('id').where('correo_electronico','=',correo_electronico).fetch()
         Object.assign(lavanderia,user_id.toJSON())
         console.log("AL SALIR", user_id.toJSON())
-        return response.json(lavanderia.token);
+        return response.json(lavanderia);
       }
       async password ({ auth, request,response ,params}) {
         const {correo_electronico, contraseña, contraseña_nueva} = request.all();
