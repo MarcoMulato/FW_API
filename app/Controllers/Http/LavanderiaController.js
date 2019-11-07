@@ -12,7 +12,7 @@ class LavanderiaController {
         return response.json(lavanderia)
       }
       async store ({request, response}) {
-        const lavanderiaInfo = request.only(['nombre_lavanderia', 'apellidos', 'correo_electronico', 'contraseña','telefono','direccion','fotografias','horario_semana','horario_sabado','coordenadas'])
+        const lavanderiaInfo = request.only(['nombre_lavanderia','correo_electronico', 'contraseña','telefono','direccion','fotografias','horario_semana','horario_sabado','coordenadas'])
     
         const lavanderia = new Lavanderia()
         lavanderia.nombre_lavanderia = lavanderiaInfo.nombre_lavanderia
