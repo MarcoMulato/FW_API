@@ -26,24 +26,28 @@ Route.group(() => {
   Route.get('usuarios/:id', 'UsuarioController.show')
   Route.post('usuariosLogin','UsuarioController.login')
   Route.put('usuarios_password/:id', 'UsuarioController.password')
+  Route.delete('usuarios/:id', 'UsuarioController.delete')
   //LAVANDERIAS
   Route.post('lavanderias', 'LavanderiaController.store')
   Route.get('lavanderias', 'LavanderiaController.index')
   Route.get('lavanderias/:id', 'LavanderiaController.show')
   Route.post('lavanderiasLogin','LavanderiaController.login')
   Route.put('lavanderias_password/:id', 'LavanderiaController.password')
+  Route.delete('lavanderias/:id', 'LavanderiaController.delete')
   //REPARTIDORES
   Route.post('repartidores', 'RepartidoresController.store')
   Route.get('repartidores', 'RepartidoresController.index')
   Route.get('repartidores/:id', 'RepartidoresController.show')
   Route.post('repartidoresLogin','RepartidoresController.login')
   Route.put('repartidores_password/:id', 'RepartidoresController.password')
+  Route.delete('repartidores/:id', 'RepartidoresController.delete')
   //PEDIDOS
   Route.post('pedidos', 'PedidoController.storeUser')
   Route.get('pedidos', 'PedidoController.index')
   Route.get('pedidos/:id', 'PedidoController.show')
   Route.post('pedidos_lavanderia/:id','PedidoController.storeLaundry')
   Route.post('pedidos_repartidor/:id','PedidoController.storeDelivery')
+  Route.delete('pedidos/:id', 'PedidoController.delete')
   ////SERVICIOS////
   //LAVANDERIA
   Route.post('servicioLavanderia', 'ServiciosLavanderiaController.store')
