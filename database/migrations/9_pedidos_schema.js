@@ -18,6 +18,9 @@ class PedidosSchema extends Schema {
       table.string('coordenadas_lavanderia')
       table.string('coordenadas_usuario')
       table.string('coordenadas_repartidor')
+      table.string('direccion_usuario')
+      table.string('direccion_lavanderia')
+      table.string('indicaciones')
       table.timestamps()
     })
   }
