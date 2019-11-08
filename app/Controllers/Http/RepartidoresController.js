@@ -66,7 +66,7 @@ class RepartidoresController {
         if(!repartidor) {
             return response.status(404).json({data: "Repartidor no encontrado."})
         }
-        repartidor.repartidor_id = repartidorInfo.status
+        repartidor.status = repartidorInfo.status
         await repartidor.save()
         return response.status(200).json(repartidor)
       }
