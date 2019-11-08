@@ -40,6 +40,7 @@ Route.group(() => {
   Route.get('repartidores/:id', 'RepartidoresController.show')
   Route.post('repartidoresLogin','RepartidoresController.login')
   Route.put('repartidores_password/:id', 'RepartidoresController.password')
+  Route.put('repartidores_status/:id', 'RepartidoresController.changeStatus')
   Route.delete('repartidores/:id', 'RepartidoresController.delete')
   //PEDIDOS
   Route.post('pedidos', 'PedidoController.storeUser')
