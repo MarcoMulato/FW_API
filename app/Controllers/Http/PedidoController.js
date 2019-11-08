@@ -22,15 +22,18 @@ class PedidoController {
         return response.json(pedido)
       }
       async storeUser ({request, response}) {
-        const pedidoInfo = request.only(['usuario_id','repartidor_id','lavanderia_id', 'fecha_pedido', 'status', 'datos_ropa'])
+        const pedidoInfo = request.only(['usuario_id','lavanderia_id', 'fecha_pedido', 'status', 'datos_ropa','servicios','coordenadas_usuario','direccion','indicaciones'])
     
         const pedido = new Pedido()
         pedido.usuario_id = pedidoInfo.usuario_id
-        pedido.repartidor_id = pedidoInfo.repartidor_id
         pedido.lavanderia_id = pedidoInfo.lavanderia_id
         pedido.fecha_pedido = pedidoInfo.fecha_pedido
         pedido.status = pedidoInfo.status
         pedido.datos_ropa = pedidoInfo.datos_ropa
+        pedido.servico = pedidoInfo.servico
+        pedido.coordenadas_usuario = pedidoInfo.coordenadas_usuario
+        pedido.direccion = pedidoInfo.direccion
+        pedido.indicaciones = pedidoInfo.indicaciones
     
         await pedido.save()
     
