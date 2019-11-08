@@ -30,7 +30,7 @@ class PedidoController {
         pedido.fecha_pedido = pedidoInfo.fecha_pedido
         pedido.status = pedidoInfo.status
         pedido.datos_ropa = pedidoInfo.datos_ropa
-        pedido.servico = pedidoInfo.servico
+        pedido.servicios = pedidoInfo.servicios
         pedido.coordenadas_usuario = pedidoInfo.coordenadas_usuario
         pedido.direccion_usuario = pedidoInfo.direccion_usuario
         pedido.indicaciones = pedidoInfo.indicaciones
