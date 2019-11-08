@@ -6,6 +6,11 @@ class PedidoController {
     
         return response.json(pedidos)
       }
+      async show ({params, response}) {
+        const pedido = await Pedido.find(params.id)
+    
+        return response.json(pedido)
+      }
       async showDelivery ({params, response}) {
         const pedido = await Pedido.query().select('*').where('repartidor_id','=',params.id).fetch()
     

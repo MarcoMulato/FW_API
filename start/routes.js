@@ -45,6 +45,7 @@ Route.group(() => {
   //PEDIDOS
   Route.post('pedidos', 'PedidoController.storeUser')
   Route.get('pedidos', 'PedidoController.index')
+  Route.get('pedidos/:id', 'PedidoController.show')
   Route.get('pedidos_repartidor/:id', 'PedidoController.showDelivery')
   Route.get('pedidos_usuario/:id', 'PedidoController.showUser')
   Route.get('pedidos_lavanderia/:id', 'PedidoController.showLaundry')
