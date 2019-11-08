@@ -7,7 +7,7 @@ class PedidoController {
         return response.json(pedidos)
       }
       async show ({params, response}) {
-        const pedido = await Pedido.find(params.id)
+        const pedido = await Pedido.query().select('*').where('repartidor_id','=',params.id).fetch()
     
         return response.json(pedido)
       }
