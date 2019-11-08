@@ -6,16 +6,27 @@ class PedidoController {
     
         return response.json(pedidos)
       }
-      async show ({params, response}) {
+      async showDelivery ({params, response}) {
         const pedido = await Pedido.query().select('*').where('repartidor_id','=',params.id).fetch()
     
         return response.json(pedido)
       }
+      async showUser ({params, response}) {
+        const pedido = await Pedido.query().select('*').where('usuario_id','=',params.id).fetch()
+    
+        return response.json(pedido)
+      }
+      async showLaundry ({params, response}) {
+        const pedido = await Pedido.query().select('*').where('lavanderia_id','=',params.id).fetch()
+    
+        return response.json(pedido)
+      }
       async storeUser ({request, response}) {
-        const pedidoInfo = request.only(['usuario_id','lavanderia_id', 'fecha_pedido', 'status', 'datos_ropa'])
+        const pedidoInfo = request.only(['usuario_id','repartidor_id','lavanderia_id', 'fecha_pedido', 'status', 'datos_ropa'])
     
         const pedido = new Pedido()
         pedido.usuario_id = pedidoInfo.usuario_id
+        pedido.repartidor_id = pedidoInfo.repartidor_id
         pedido.lavanderia_id = pedidoInfo.lavanderia_id
         pedido.fecha_pedido = pedidoInfo.fecha_pedido
         pedido.status = pedidoInfo.status

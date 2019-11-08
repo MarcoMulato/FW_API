@@ -45,7 +45,9 @@ Route.group(() => {
   //PEDIDOS
   Route.post('pedidos', 'PedidoController.storeUser')
   Route.get('pedidos', 'PedidoController.index')
-  Route.get('pedidos/:id', 'PedidoController.show')
+  Route.get('pedidos_repartidor/:id', 'PedidoController.showDelivery')
+  Route.get('pedidos_usuario/:id', 'PedidoController.showUser')
+  Route.get('pedidos_lavanderia/:id', 'PedidoController.showLaundry')
   Route.post('pedidos_lavanderia/:id','PedidoController.storeLaundry')
   Route.post('pedidos_repartidor/:id','PedidoController.storeDelivery')
   Route.delete('pedidos/:id', 'PedidoController.delete')
