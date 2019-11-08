@@ -13,6 +13,7 @@ class UsuariosSchema extends Schema {
       table.string('contraseña').notNullable()
       table.string('telefono').notNullable()
       table.string('direccion').notNullable()
+      table.string('coordenadas')
       table.timestamps()
     })
   }

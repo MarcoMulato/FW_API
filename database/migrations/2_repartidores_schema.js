@@ -14,6 +14,7 @@ class RepartidoresSchema extends Schema {
       table.string('telefono').notNullable()
       table.string('foto_perfil').notNullable()
       table.string('status').notNullable()
+      table.string('coordenadas')
       table.timestamps()
     })
   }
