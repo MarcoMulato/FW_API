@@ -60,6 +60,16 @@ class RepartidoresController {
     
         return response.status(200).json(repartidorcontra)
       }
+      async changeStatus ({request,response ,params}) {
+        repartidorInfo = request.only(['status'])
+        const repartidor = await Repartidor.find(params.id)
+        if(!repartidor) {
+            return response.status(404).json({data: "Repartidor no encontrado."})
+        }
+        repartidor.repartidor_id = repartidorInfo.status
+        await repartidor.save()
+        return response.status(200).json(repartidor)
+      }
 }
 
 module.exports = RepartidoresController
