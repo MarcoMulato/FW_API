@@ -70,6 +70,16 @@ class RepartidoresController {
         await repartidor.save()
         return response.status(200).json(repartidor)
       }
+      async changeCoords ({request,response,params}) {
+        const repartidorInfo = request.only(['coordenadas'])
+        const repartidor = await Repartidor.find(params.id)
+        if(!repartidor) {
+            return response.status(404).json({data: "Repartidor no encontrado."})
+        }
+        repartidor.coordenadas = repartidorInfo.coordenadas
+        await repartidor.save()
+        return response.status(200).json(repartidor)
+      }
 }
 
 module.exports = RepartidoresController
