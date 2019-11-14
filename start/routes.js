@@ -26,6 +26,7 @@ Route.group(() => {
   Route.get('usuarios/:id', 'UsuarioController.show')
   Route.post('usuariosLogin','UsuarioController.login')
   Route.put('usuarios_password/:id', 'UsuarioController.password')
+  Route.put('usuarios_edit/:id', 'UsuarioController.editUser')
   Route.delete('usuarios/:id', 'UsuarioController.delete')
   //LAVANDERIAS
   Route.post('lavanderias', 'LavanderiaController.store')
@@ -33,6 +34,7 @@ Route.group(() => {
   Route.get('lavanderias/:id', 'LavanderiaController.show')
   Route.post('lavanderiasLogin','LavanderiaController.login')
   Route.put('lavanderias_password/:id', 'LavanderiaController.password')
+  Route.put('lavanderias_edit/:id', 'LavanderiaController.editLaundry')
   Route.delete('lavanderias/:id', 'LavanderiaController.delete')
   //REPARTIDORES
   Route.post('repartidores', 'RepartidoresController.store')
