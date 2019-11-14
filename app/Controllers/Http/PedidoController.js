@@ -55,14 +55,23 @@ class PedidoController {
         await pedido.save()
         return response.status(200).json(pedido)
       }
-      async storeDelivery({request,response ,params}) {
+      async storeDeliveryStatus({request,response ,params}) {
+        const pedidoInfo = request.only(['status'])
+        const pedido = await Pedido.find(params.id)
+        if(!pedido) {
+            return response.status(404).json({data: "Pedido no encontrado."})
+        }
+        pedido.status = pedidoInfo.status
+        await pedido.save()
+        return response.status(200).json(pedido)
+      }
+      async storeDeliveryCost({request,response ,params}) {
         const pedidoInfo = request.only(['costo'])
         const pedido = await Pedido.find(params.id)
         if(!pedido) {
             return response.status(404).json({data: "Pedido no encontrado."})
         }
         pedido.costo = pedidoInfo.costo
-        pedido.status = "Llevando a lavanderia"
         await pedido.save()
         return response.status(200).json(pedido)
       }
