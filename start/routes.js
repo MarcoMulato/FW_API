@@ -52,9 +52,9 @@ Route.group(() => {
   Route.get('pedidos_repartidor/:id', 'PedidoController.showDelivery')
   Route.get('pedidos_usuario/:id', 'PedidoController.showUser')
   Route.get('pedidos_lavanderia/:id', 'PedidoController.showLaundry')
-  Route.post('pedidos_lavanderia/:id','PedidoController.storeLaundry')
-  Route.post('pedidos_repartidor_costo/:id','PedidoController.storeDeliveryCost')
-  Route.post('pedidos_repartidor_status/:id','PedidoController.storeDeliveryStatus')
+  Route.put('pedidos_lavanderia/:id','PedidoController.storeLaundry')
+  Route.put('pedidos_repartidor_costo/:id','PedidoController.storeDeliveryCost')
+  Route.put('pedidos_repartidor_status/:id','PedidoController.storeDeliveryStatus')
   Route.delete('pedidos/:id', 'PedidoController.delete')
   ////SERVICIOS////
   //LAVANDERIA
