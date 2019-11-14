@@ -59,6 +59,20 @@ class UsuarioController {
 
     return response.status(200).json(usuariocontra)
   }
+  async editUser ({request,response,params}) {
+    const usuarioInfo = request.only(['nombres', 'apellidos', 'correo_electronico','telefono','direccion'])
+    const usuario = await Usuario.find(params.id)
+    if(!usuario) {
+      return response.status(404).json({data: "Usuario no encontrado."})
+    }
+    usuario.nombres = usuarioInfo.nombres
+    usuario.apellidos = usuarioInfo.apellidos
+    usuario.correo_electronico = usuarioInfo.correo_electronico
+    usuario.telefono = usuarioInfo.telefono
+    usuario.direccion = usuarioInfo.direccion
+    await usuario.save()
+    return response.status(200).json(usuario)
+  }
 }
 
 module.exports = UsuarioController
