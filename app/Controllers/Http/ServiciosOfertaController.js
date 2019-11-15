@@ -33,7 +33,7 @@ class ServiciosOfertaController {
   }
   async update ({params, request, response}) {
     const servicioInfo = request.only(['servicio'])
-    const servicio = await Servicio.query().select('*').where('lavanderia_id','=',params.id).fetch()
+    var servicio = await Servicio.query().select('*').where('lavanderia_id','=',params.id).fetch()
     servicio = servicio.toJSON();
     const servicioC = await Servicio.find(servicio.id)
     if (!servicioC) {
