@@ -62,7 +62,7 @@ class LavanderiaController {
         return response.status(200).json(lavanderiacontra)
       }
       async editLaundry ({request,response,params}) {
-        const lavanderiaInfo = request.only(['nombre_lavanderia','correo_electronico','telefono','direccion','horario_semana','horario_sabado','coordenadas'])
+        const lavanderiaInfo = request.only(['nombre_lavanderia','correo_electronico','telefono','direccion','fotografias','horario_semana','horario_sabado','coordenadas'])
         const lavanderia = await Lavanderia.find(params.id)
         if(!lavanderia) {
           return response.status(404).json({data: "Lavanderia no encontrado."})
@@ -71,6 +71,7 @@ class LavanderiaController {
         lavanderia.direccion = lavanderiaInfo.direccion
         lavanderia.telefono = lavanderiaInfo.telefono
         lavanderia.correo_electronico = lavanderiaInfo.correo_electronico
+        lavanderia.fotografias = lavanderiaInfo.fotografias
         lavanderia.horario_semana = lavanderiaInfo.horario_semana
         lavanderia.horario_sabado = lavanderiaInfo.horario_sabado
         lavanderia.coordenadas = lavanderiaInfo.coordenadas
