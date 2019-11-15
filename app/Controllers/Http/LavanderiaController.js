@@ -63,7 +63,7 @@ class LavanderiaController {
       }
       async editLaundry ({request,response,params}) {
         const lavanderiaInfo = request.only(['nombre_lavanderia','correo_electronico','telefono','direccion','horario_semana','horario_sabado','coordenadas'])
-        const lavanderia = await Usuario.find(params.id)
+        const lavanderia = await Lavanderia.find(params.id)
         if(!lavanderia) {
           return response.status(404).json({data: "Lavanderia no encontrado."})
         }
