@@ -12,7 +12,7 @@ class RepartidoresSchema extends Schema {
       table.string('correo_electronico').notNullable()
       table.string('contraseña').notNullable()
       table.string('telefono').notNullable()
-      table.string('foto_perfil')
+      table.text('foto_perfil','longtext')
       table.string('status')
       table.string('coordenadas')
       table.timestamps()
