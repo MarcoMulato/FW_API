@@ -45,13 +45,13 @@ class PedidoController {
         return response.status(201).json(pedido)
       }
       async storeLaundry({request,response ,params}) {
-        const pedidoInfo = request.only(['repartidor_id'])
+        const pedidoInfo = request.only(['repartidor_id','status'])
         const pedido = await Pedido.find(params.id)
         if(!pedido) {
             return response.status(404).json({data: "Pedido no encontrado."})
         }
         pedido.repartidor_id = pedidoInfo.repartidor_id
-        pedido.status = "Enviando repartidor"
+        pedido.status = pedidoInfo.status
         await pedido.save()
         return response.status(200).json(pedido)
       }
