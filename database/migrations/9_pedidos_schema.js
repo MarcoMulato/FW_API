@@ -14,7 +14,7 @@ class PedidosSchema extends Schema {
       table.string('status')
       table.string('datos_ropa')
       table.text('servicios','longtext')
-      table.string('tipo_servicio')
+      table.string('tipo_entrega')
       table.string('precio')
       table.string('coordenadas_lavanderia')
       table.string('coordenadas_usuario')
