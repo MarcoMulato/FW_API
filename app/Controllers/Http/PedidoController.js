@@ -40,7 +40,7 @@ class PedidoController {
         pedido.coordenadas_usuario = pedidoInfo.coordenadas_usuario
         pedido.direccion_usuario = pedidoInfo.direccion_usuario
         pedido.coordenadas_lavanderia = pedidoInfo.coordenadas_lavanderia
-        pedido.direccion_lavanaderia = pedidoInfo.direccion_lavanaderia
+        pedido.direccion_lavanderia = pedidoInfo.direccion_lavanderia
         pedido.indicaciones = pedidoInfo.indicaciones
     
         await pedido.save()
