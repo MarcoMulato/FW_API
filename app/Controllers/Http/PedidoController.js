@@ -39,7 +39,7 @@ class PedidoController {
         pedido.tipo_entrega = pedidoInfo.tipo_entrega
         pedido.coordenadas_usuario = pedidoInfo.coordenadas_usuario
         pedido.direccion_usuario = pedidoInfo.direccion_usuario
-        pedido.coordenadas_lavanaderia = pedidoInfo.coordenadas_lavanaderia
+        pedido.coordenadas_lavanderia = pedidoInfo.coordenadas_lavanderia
         pedido.direccion_lavanaderia = pedidoInfo.direccion_lavanaderia
         pedido.indicaciones = pedidoInfo.indicaciones
     
