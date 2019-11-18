@@ -12,7 +12,7 @@ class PedidosSchema extends Schema {
       table.integer('repartidor_id').unsigned().references('id').inTable('repartidores')
       table.string('fecha_pedido')
       table.string('status')
-      table.string('datos_ropa')
+      table.text('datos_ropa','longtext')
       table.text('servicios','longtext')
       table.string('tipo_entrega')
       table.string('precio')
@@ -21,7 +21,7 @@ class PedidosSchema extends Schema {
       table.string('coordenadas_repartidor')
       table.string('direccion_usuario')
       table.string('direccion_lavanderia')
-      table.string('indicaciones')
+      table.text('indicaciones','longtext')
       table.timestamps()
     })
   }
