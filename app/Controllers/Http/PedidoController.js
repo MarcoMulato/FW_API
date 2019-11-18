@@ -69,12 +69,12 @@ class PedidoController {
         return response.status(200).json(pedido)
       }
       async storeDeliveryCost({request,response ,params}) {
-        const pedidoInfo = request.only(['costo'])
+        const pedidoInfo = request.only(['precio'])
         const pedido = await Pedido.find(params.id)
         if(!pedido) {
             return response.status(404).json({data: "Pedido no encontrado."})
         }
-        pedido.costo = pedidoInfo.costo
+        pedido.precio = pedidoInfo.precio
         await pedido.save()
         return response.status(200).json(pedido)
       }
