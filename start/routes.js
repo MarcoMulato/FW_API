@@ -53,6 +53,7 @@ Route.group(() => {
   Route.get('pedidos_usuario/:id', 'PedidoController.showUser')
   Route.get('pedidos_lavanderia/:id', 'PedidoController.showLaundry')
   Route.put('pedidos_lavanderia/:id','PedidoController.storeLaundry')
+  Route.put('pedidos_lavanderia/:id','PedidoController.storeLaundryData')
   Route.put('pedidos_repartidor_costo/:id','PedidoController.storeDeliveryCost')
   Route.put('pedidos_repartidor_status/:id','PedidoController.storeDeliveryStatus')
   Route.delete('pedidos/:id', 'PedidoController.delete')
