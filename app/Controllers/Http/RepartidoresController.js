@@ -44,6 +44,13 @@ class RepartidoresController {
         console.log("AL SALIR", user_id.toJSON())
         return response.json(repartidor);
       }
+      async search ({params, response}) {
+        const repartidor = await Repartidor.query().select('*').where('correo_electronico','=',params.id).fetch()
+        if (!repartidor) {
+          return response.status(404).json({data: 'Resource not found'})
+        }
+        return response.json(repartidor)
+      }
       async password ({ auth, request,response ,params}) {
         const {correo_electronico, contraseña, contraseña_nueva} = request.all();
         console.log("correo:", correo_electronico)
