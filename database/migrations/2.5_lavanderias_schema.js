@@ -10,7 +10,7 @@ class LavanderiasSchema extends Schema {
       table.string('nombre_lavanderia').notNullable()
       table.string('direccion').notNullable()
       table.string('telefono').notNullable()
-      table.string('correo_electronico').notNullable()
+      table.string('correo_electronico').notNullable().unique()
       table.string('contraseña').notNullable()
       table.text('fotografias','longtext').notNullable()
       table.string('horario_semana')

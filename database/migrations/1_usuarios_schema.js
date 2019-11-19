@@ -9,7 +9,7 @@ class UsuariosSchema extends Schema {
       table.increments()
       table.string('nombres').notNullable()
       table.string('apellidos').notNullable()
-      table.string('correo_electronico').notNullable()
+      table.string('correo_electronico').notNullable().unique()
       table.string('contraseña').notNullable()
       table.string('telefono').notNullable()
       table.string('direccion').notNullable()

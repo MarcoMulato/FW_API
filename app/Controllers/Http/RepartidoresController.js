@@ -12,7 +12,7 @@ class RepartidoresController {
         return response.json(repartidor)
       }
       async store ({request, response}) {
-        const repartidorInfo = request.only(['nombres', 'apellidos', 'correo_electronico','foto_perfil', 'contraseña','telefono','direccion'])
+        const repartidorInfo = request.only(['nombres', 'apellidos', 'correo_electronico','foto_perfil', 'contraseña','telefono','direccion','matricula'])
     
         const repartidor = new Repartidor()
         repartidor.nombres = repartidorInfo.nombres
@@ -22,6 +22,7 @@ class RepartidoresController {
         repartidor.telefono = repartidorInfo.telefono
         repartidor.foto_perfil = repartidorInfo.foto_perfil
         repartidor.status = repartidorInfo.status
+        repartidor.matricula = repartidorInfo.matricula
     
         await repartidor.save()
     
