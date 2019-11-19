@@ -51,6 +51,16 @@ class RepartidoresController {
         }
         return response.json(repartidor)
       }
+      async changePassword ({request,response ,params}) {
+        const repartidorInfo = request.only(['contraseña'])
+        const repartidor = await Repartidor.find(params.id)
+        if(!repartidor) {
+            return response.status(404).json({data: "Repartidor no encontrado."})
+        }
+        repartidor.contraseña = repartidorInfo.contraseña
+        await repartidor.save()
+        return response.status(200).json(repartidor)
+      }
       async password ({ auth, request,response ,params}) {
         const {correo_electronico, contraseña, contraseña_nueva} = request.all();
         console.log("correo:", correo_electronico)

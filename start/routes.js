@@ -41,6 +41,7 @@ Route.group(() => {
   Route.get('repartidores', 'RepartidoresController.index')
   Route.get('repartidores/:id', 'RepartidoresController.show')
   Route.get('repartidores_correo/:id', 'RepartidoresController.search')
+  Route.put('repartidores_cambiar_password/:id', 'RepartidoresController.changePassword')
   Route.post('repartidoresLogin','RepartidoresController.login')
   Route.put('repartidores_password/:id', 'RepartidoresController.password')
   Route.put('repartidores_status/:id', 'RepartidoresController.changeStatus')
