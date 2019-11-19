@@ -28,7 +28,8 @@ class PedidoController {
       }
       async storeUser ({request, response}) {
         const pedidoInfo = request.only(['usuario_id','lavanderia_id','tipo_entrega', 'fecha_pedido', 'status', 'datos_ropa','servicios','coordenadas_usuario','direccion_usuario','coordenadas_lavanderia','precio','direccion_lavanderia','indicaciones'])
-    
+        console.log("PRECIO:",pedidoInfo.precio);
+        
         const pedido = new Pedido()
         pedido.usuario_id = pedidoInfo.usuario_id
         pedido.lavanderia_id = pedidoInfo.lavanderia_id
