@@ -98,6 +98,23 @@ class RepartidoresController {
         await repartidor.save()
         return response.status(200).json(repartidor)
       }
+      async editDelivery ({request,response,params}) {
+        const repartidorInfo = request.only(['nombres', 'apellidos', 'correo_electronico','foto_perfil','telefono','direccion','matricula'])
+        const repartidor = await Repartidor.find(params.id)
+        if(!repartidor) {
+            return response.status(404).json({data: "Repartidor no encontrado."})
+        }
+        repartidor.nombres = repartidorInfo.nombres
+        repartidor.apellidos = repartidorInfo.apellidos
+        repartidor.correo_electronico = repartidorInfo.correo_electronico
+        repartidor.telefono = repartidorInfo.telefono
+        repartidor.foto_perfil = repartidorInfo.foto_perfil
+        repartidor.status = repartidorInfo.status
+        repartidor.matricula = repartidorInfo.matriculas
+    
+        await repartidor.save()
+        return response.status(200).json(repartidor)
+      }
 }
 
 module.exports = RepartidoresController
