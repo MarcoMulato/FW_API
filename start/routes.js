@@ -47,6 +47,7 @@ Route.group(() => {
   Route.put('repartidores_status/:id', 'RepartidoresController.changeStatus')
   Route.put('repartidores_coords/:id', 'RepartidoresController.changeCoords')
   Route.put('repartidores_edit/:id', 'RepartidoresController.editDelivery')
+  Route.get('repartidores_show_coords/:id', 'RepartidoresController.showDeliveryCoords')
   Route.delete('repartidores/:id', 'RepartidoresController.delete')
   //PEDIDOS
   Route.post('pedidos', 'PedidoController.storeUser')

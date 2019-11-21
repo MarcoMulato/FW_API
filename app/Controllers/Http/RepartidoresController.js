@@ -115,6 +115,11 @@ class RepartidoresController {
         await repartidor.save()
         return response.status(200).json(repartidor)
       }
+      async showDeliveryCoords ({params, response}) {
+        const pedido = await Pedido.query().select('coordenadas').where('repartidor_id','=',params.id).fetch()
+    
+        return response.json(pedido)
+      }
 }
 
 module.exports = RepartidoresController
