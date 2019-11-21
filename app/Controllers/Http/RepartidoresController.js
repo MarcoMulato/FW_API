@@ -116,9 +116,9 @@ class RepartidoresController {
         return response.status(200).json(repartidor)
       }
       async showDeliveryCoords ({params, response}) {
-        const pedido = await Pedido.query().select('coordenadas').where('repartidor_id','=',params.id).fetch()
+        const repartidor = await Repartidor.query().select('coordenadas').where('repartidor_id','=',params.id).fetch()
     
-        return response.json(pedido)
+        return response.json(repartidor)
       }
 }
 
