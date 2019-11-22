@@ -83,6 +83,13 @@ class UsuarioController {
         await usuario.save()
         return response.status(200).json(usuario)
   }
+  async search ({params, response}) {
+    const usuario = await Usuario.query().select('*').where('correo_electronico','=',params.id).fetch()
+    if (!usuario) {
+      return response.status(404).json({data: 'Resource not found'})
+    }
+    return response.json(usuario)
+  }
 }
 
 module.exports = UsuarioController

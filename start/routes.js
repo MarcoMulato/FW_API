@@ -29,6 +29,7 @@ Route.group(() => {
   Route.put('usuarios_edit/:id', 'UsuarioController.editUser')
   Route.delete('usuarios/:id', 'UsuarioController.delete')
   Route.put('usuarios_cambiar_password/:id', 'UsuarioController.changePassword')
+  Route.get('usuarios_correo/:id', 'UsuarioController.search')
   //LAVANDERIAS
   Route.post('lavanderias', 'LavanderiaController.store')
   Route.get('lavanderias', 'LavanderiaController.index')
