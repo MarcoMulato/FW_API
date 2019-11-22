@@ -78,6 +78,23 @@ class LavanderiaController {
         await lavanderia.save()
         return response.status(200).json(lavanderia)
       }
+      async changePassword ({request,response ,params}) {
+        const lavanderiaInfo = request.only(['contraseña'])
+        const lavanderia = await Lavanderia.find(params.id)
+        if(!lavanderia) {
+            return response.status(404).json({data: "Usuario no encontrado."})
+        }
+        lavanderia.contraseña = lavanderiaInfo.contraseña
+        await lavanderia.save()
+        return response.status(200).json(lavanderia)
+  }
+      async search ({params, response}) {
+    const lavanderia = await Usuario.query().select('*').where('correo_electronico','=',params.id).fetch()
+    if (!lavanderia) {
+      return response.status(404).json({data: 'Resource not found'})
+    }
+    return response.json(lavanderia)
+      }
 }
 
 module.exports = LavanderiaController
