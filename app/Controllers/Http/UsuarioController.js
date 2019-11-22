@@ -73,6 +73,16 @@ class UsuarioController {
     await usuario.save()
     return response.status(200).json(usuario)
   }
+  async changePassword ({request,response ,params}) {
+        const usuarioInfo = request.only(['contraseña'])
+        const usuario = await Usuario.find(params.id)
+        if(!usuario) {
+            return response.status(404).json({data: "Usuario no encontrado."})
+        }
+        usuario.contraseña = usuarioInfo.contraseña
+        await usuario.save()
+        return response.status(200).json(usuario)
+  }
 }
 
 module.exports = UsuarioController
