@@ -89,7 +89,7 @@ class LavanderiaController {
         return response.status(200).json(lavanderia)
   }
       async search ({params, response}) {
-    const lavanderia = await Usuario.query().select('*').where('correo_electronico','=',params.id).fetch()
+    const lavanderia = await Lavanderia.query().select('*').where('correo_electronico','=',params.id).fetch()
     if (!lavanderia) {
       return response.status(404).json({data: 'Resource not found'})
     }
